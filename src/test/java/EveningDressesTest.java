@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +27,7 @@ public class EveningDressesTest {
     private final By DRESSES = By.xpath(".//div[@id='block_top_menu']/ul/li/a[contains(@title, 'Dresses')]");
     private final By EVENING_DRESSES_IN_BLOCK_TOP_MENU = By.xpath(".//div[@id='categories_block_left']//a[contains(@title, 'evening')]");
     private final By DRESSES_ADITIONAL_INFO = By.xpath(".//div[contains(@class, 'product-container')]");
-    //private final By PRICE = By.xpath(".//div[contains(@class, 'price')]//span[@id='our_price_display']");
+
 
     private final By DRESS_MODEL_IN_ADDITIONAL_INFO_CARD = By.xpath(".//p[@id='product_reference']/span");
     private final By DRESS_SIZE_IN_ADDITIONAL_INFO_CARD = By.xpath(".//div[@id='uniform-group_1']//span");
@@ -72,5 +73,9 @@ public class EveningDressesTest {
 
     }
 
+    @AfterEach
+    public void closeBrowser() {
+        driver.close();
+    }
 
 }
